@@ -23,11 +23,10 @@ class MainRouter extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 16.0),
       shrinkWrap: true,
       children: [
-        CustomElevatedButton(
-            'Pushed ${Routes.secondRoute}', Navigate.push),
-        CustomElevatedButton(
-            'Presented ${Routes.secondRoute}', Navigate.present),
-        CustomElevatedButton(Routes.thirdRoute, Navigate.push)
+        CustomElevatedButton(Routes.secondRoute, Navigate.push),
+        CustomElevatedButton(Routes.secondRoute, Navigate.present),
+        CustomElevatedButton(Routes.thirdRoute, Navigate.push),
+        CustomElevatedButton(Routes.forthRoute, Navigate.push),
       ],
     );
   }
