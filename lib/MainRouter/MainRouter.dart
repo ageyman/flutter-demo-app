@@ -4,7 +4,6 @@ import 'package:flutter_navigation_app/main.dart';
 
 class Constants {
   static const title = 'Main Router';
-  static const buttonText = 'Push';
 }
 
 class MainRouter extends StatelessWidget {
