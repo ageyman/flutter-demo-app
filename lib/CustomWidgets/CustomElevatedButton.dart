@@ -8,15 +8,14 @@ enum Navigate { push, pop, present }
 class CustomElevatedButton extends StatelessWidget {
   final String text;
   final Navigate navigate;
-  final String routeName;
 
-  CustomElevatedButton(this.text, this.navigate, this.routeName);
+  CustomElevatedButton(this.text, this.navigate);
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       child: Text(text),
-      onPressed: () => _goTo(context, navigate, routeName),
+      onPressed: () => _goTo(context, navigate, text),
     );
   }
 
@@ -43,7 +42,7 @@ class CustomElevatedButton extends StatelessWidget {
   }
 
   Route _createRoute() {
-    var route =  Routes.appRoutes[routeName];
+    var route =  Routes.appRoutes[text];
     return PageRouteBuilder(
       pageBuilder: (context, animation, secondaryAnimation) => route(context),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
