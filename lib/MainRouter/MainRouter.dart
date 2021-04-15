@@ -27,6 +27,7 @@ class MainRouter extends StatelessWidget {
         CustomElevatedButton(Routes.secondRoute, Navigate.present),
         CustomElevatedButton(Routes.thirdRoute, Navigate.push),
         CustomElevatedButton(Routes.forthRoute, Navigate.push),
+        CustomElevatedButton(Routes.tabBarRoute, Navigate.push),
       ],
     );
   }
