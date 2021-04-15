@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_navigation_app/BasicContainerAnimation/BasicContainerAnimation.dart';
 import 'package:flutter_navigation_app/DrawerDemo/DrawerDemo.dart';
 
+import 'assets/AppTheme.dart';
 import 'MainRouter/MainRouter.dart';
 import 'SnackBarDemo/SnackBarDemo.dart';
 
@@ -22,6 +23,7 @@ class Routes {
 
 void main() {
   runApp(MaterialApp(
+    theme: AppTheme.appTheme,
     initialRoute: Routes.mainRoute,
     routes: Routes.appRoutes,
   ));
