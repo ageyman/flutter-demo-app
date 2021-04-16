@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_navigation_app/CustomWidgets/CustomElevatedButton.dart';
 import 'package:flutter_navigation_app/SnackBarDemo/SnackBarDemo.dart';
@@ -12,15 +14,9 @@ class TabBarDemo extends StatelessWidget {
       length: elements.length,
       child: Scaffold(
         appBar: AppBar(
-          bottom: TabBar(tabs:
-              [
-                Tab(icon: Icon(Icons.star)),
-                Tab(icon: Icon(Icons.forward)),
-                Tab(icon: Icon(Icons.lock_clock)),
-                Tab(icon: Icon(Icons.shield)),
-                Tab(icon: Icon(Icons.share)),
-              ],
-              ),
+          bottom: TabBar(
+            tabs: _setTabBarIcons(),
+          ),
           title: Text('Tabs Demo'),
         ),
         body: TabBarView(
@@ -37,4 +33,19 @@ class TabBarDemo extends StatelessWidget {
             height: 60,
           ))
       .toList();
+
+  List<Widget> _setTabBarIcons() {
+    final availableIcons = [
+      Icons.star,
+      Icons.forward,
+      Icons.shield,
+      Icons.share,
+      Icons.alarm
+    ];
+
+    return elements
+        .map((e) => Tab(
+            icon: Icon(availableIcons[Random().nextInt(elements.length - 1)])))
+        .toList();
+  }
 }
