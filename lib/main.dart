@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_navigation_app/BasicContainerAnimation/BasicContainerAnimation.dart';
 import 'package:flutter_navigation_app/BasicNetworking/NetworkingDemo.dart';
 import 'package:flutter_navigation_app/DrawerDemo/DrawerDemo.dart';
+import 'package:flutter_navigation_app/NetworkingBigJSON/BigJSONView.dart';
 import 'package:flutter_navigation_app/TabBarSample/TabBarSample.dart';
 
 import 'assets/AppTheme.dart';
@@ -15,6 +16,7 @@ class Routes {
   static const forthRoute = 'Drawer Demo';
   static const tabBarRoute = 'Tab Bar';
   static const networkingDemo = 'Basic Networking';
+  static const fetchArray = 'Not So Basic Networking';
 
   static final appRoutes = {
     Routes.mainRoute: (context) => MainRouter(),
@@ -23,6 +25,7 @@ class Routes {
     Routes.forthRoute: (context) => DrawerDemo(),
     Routes.tabBarRoute: (context) => TabBarDemo(),
     Routes.networkingDemo: (context) => NetworkingDemo(),
+    Routes.fetchArray: (context) => BigJSONView(),
   };
 }
 

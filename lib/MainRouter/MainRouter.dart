@@ -29,6 +29,7 @@ class MainRouter extends StatelessWidget {
         CustomElevatedButton(Routes.forthRoute, Navigate.push),
         CustomElevatedButton(Routes.tabBarRoute, Navigate.push),
         CustomElevatedButton(Routes.networkingDemo, Navigate.push),
+        CustomElevatedButton(Routes.fetchArray, Navigate.push),
       ],
     );
   }
