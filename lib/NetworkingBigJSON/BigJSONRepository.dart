@@ -21,15 +21,14 @@ class Photo {
 
 class BigJSONRepository {
   final String _url = 'https://jsonplaceholder.typicode.com/photos';
-  List<Photo> parsePhotos(String responseBody) {
-    final parsed = jsonDecode(responseBody).cast<Map<String, dynamic>>();
-
-    return parsed.map<Photo>((json) => Photo.fromJson(json)).toList();
-  }
 
   Future<List<Photo>> fetchPhotos(http.Client client) async {
-    final response = await client
-        .get(Uri.parse(_url));
+    final response = await client.get(Uri.parse(_url));
     return compute(parsePhotos, response.body);
   }
+}
+
+List<Photo> parsePhotos(String responseBody) {
+  final parsed = jsonDecode(responseBody).cast<Map<String, dynamic>>();
+  return parsed.map<Photo>((json) => Photo.fromJson(json)).toList();
 }

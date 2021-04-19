@@ -7,25 +7,21 @@ class BigJSONView extends StatelessWidget {
   final repository = BigJSONRepository();
   @override
   Widget build(BuildContext context) => Scaffold(
-    appBar: AppBar(),
-    body: FutureBuilder<List<Photo>>(
-  future: repository.fetchPhotos(http.Client()),
-      builder: (context, snapshot) {
-    if (snapshot.hasData) {
-      return PhotoList(photos: snapshot.data,);
-    } else {
-      return Center(child: CircularProgressIndicator());
-    }
-      }
-        ,)
-
-  );
+      appBar: AppBar(),
+      body: FutureBuilder<List<Photo>>(
+        future: repository.fetchPhotos(http.Client()),
+        builder: (context, snapshot) => snapshot.hasData
+            ? PhotoList(
+                photos: snapshot.data,
+              )
+            : Center(child: CircularProgressIndicator()),
+      ));
 }
 
 class PhotoList extends StatelessWidget {
   final List<Photo> photos;
-  final  _gridDelegate =
-      SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 4);
+  final _gridDelegate =
+      SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 5);
 
   PhotoList({Key key, this.photos}) : super(key: key);
 
