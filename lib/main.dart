@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_navigation_app/BasicContainerAnimation/BasicContainerAnimation.dart';
 import 'package:flutter_navigation_app/BasicContainerAnimation/ContainerAnimationData.dart';
 import 'package:flutter_navigation_app/BasicNetworking/NetworkingDemo.dart';
+import 'package:flutter_navigation_app/CounterMVU/CounterWrapper.dart';
 import 'package:flutter_navigation_app/DrawerDemo/DrawerDemo.dart';
 import 'package:flutter_navigation_app/NetworkingBigJSON/BigJSONView.dart';
 import 'package:flutter_navigation_app/TabBarSample/TabBarSample.dart';
@@ -19,6 +20,7 @@ class Routes {
   static const tabBarRoute = 'Tab Bar';
   static const networkingDemo = 'Basic Networking';
   static const fetchArray = 'Not So Basic Networking';
+  static const hooksDemo = 'Hooks Demo Counter';
 
   static final appRoutes = {
     Routes.mainRoute: (context) => MainRouter(),
@@ -30,6 +32,7 @@ class Routes {
     Routes.tabBarRoute: (context) => TabBarDemo(),
     Routes.networkingDemo: (context) => NetworkingDemo(),
     Routes.fetchArray: (context) => BigJSONView(),
+    Routes.hooksDemo: (context) => CounterWrapper(),
   };
 }
 
