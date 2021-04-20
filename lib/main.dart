@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_navigation_app/BasicContainerAnimation/BasicContainerAnimation.dart';
+import 'package:flutter_navigation_app/BasicContainerAnimation/ContainerAnimationData.dart';
 import 'package:flutter_navigation_app/BasicNetworking/NetworkingDemo.dart';
 import 'package:flutter_navigation_app/DrawerDemo/DrawerDemo.dart';
 import 'package:flutter_navigation_app/NetworkingBigJSON/BigJSONView.dart';
 import 'package:flutter_navigation_app/TabBarSample/TabBarSample.dart';
+import 'package:provider/provider.dart';
 
 import 'assets/AppTheme.dart';
 import 'MainRouter/MainRouter.dart';
@@ -20,7 +22,9 @@ class Routes {
 
   static final appRoutes = {
     Routes.mainRoute: (context) => MainRouter(),
-    Routes.secondRoute: (context) => BasicContainerAnimation(),
+    Routes.secondRoute: (context) => ChangeNotifierProvider(
+        create: (context) => ContainerAnimationData(),
+        child: BasicContainerAnimation()),
     Routes.thirdRoute: (context) => SnackBarDemo(),
     Routes.forthRoute: (context) => DrawerDemo(),
     Routes.tabBarRoute: (context) => TabBarDemo(),
